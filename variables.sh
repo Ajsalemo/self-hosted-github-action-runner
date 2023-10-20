@@ -1,0 +1,8 @@
+GITHUB_PAT="github_pat_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+REPO_OWNER="ownername"
+REPO_NAME="self-hosted-github-action-runner"
+CONTAINER_IMAGE_NAME="someimage:1.0"
+CONTAINER_REGISTRY_NAME="someacr"
+JOB_NAME="some-aca-gh-runner-job"
+RESOURCE_GROUP="some-rg"
+ENVIRONMENT="managedEnvironment-name"

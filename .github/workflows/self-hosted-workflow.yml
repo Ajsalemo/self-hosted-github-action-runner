@@ -1,0 +1,51 @@
+name: Trigger auto deployment for ansalemo-cicd-test
+
+# When this action will be executed
+on:
+  # Automatically trigger it when detected changes in repo
+  push:
+    branches: 
+      [ main ]
+    paths:
+    - 'go/**'
+    - '.github/workflows/self-hosted-workflow.yml'
+
+  # Allow manual trigger 
+  workflow_dispatch:
+      
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@v2
+      # Self-hosted runners don't have az cli installed 
+      - name: Install Azure cli
+        run: |
+          sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg
+          curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
+          AZ_REPO=$(lsb_release -cs)
+          echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
+          sudo apt-get update
+          sudo apt-get install azure-cli
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Build and push container image to registry
+        uses: azure/container-apps-deploy-action@v1
+        with:
+          appSourcePath: ${{ github.workspace }}/go 
+          registryUrl: ansalemoacr.azurecr.io
+          registryUsername: ${{ secrets.AZURE_CONTAINER_REGISTRY_USERNAME }}
+          registryPassword: ${{ secrets.AZURE_CONTAINER_REGISTRY_PASSWORD }}
+          containerAppName: ansalemo-aca-placeholder
+          resourceGroup: ansalemo-rg
+          imageToBuild: ansalemoacr.azurecr.io/ansalemo-gh-runner-go:${{ github.sha }}
+          dockerfilePath: Dockerfile
+
+     
+
