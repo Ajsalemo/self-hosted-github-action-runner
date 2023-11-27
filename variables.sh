@@ -1,4 +1,4 @@
-GITHUB_PAT="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"
+GITHUB_PAT="github_pat_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 REPO_OWNER="ownername"
 REPO_NAME="self-hosted-github-action-runner"
 CONTAINER_IMAGE_NAME="someimage:1.0"
