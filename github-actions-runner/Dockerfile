@@ -11,6 +11,6 @@ COPY ./entrypoint.sh ./entrypoint.sh
 RUN chmod +x ./entrypoint.sh
 # Switch to user 'runner'
 # Otherwise we get 'Must not run with sudo
-USER runner
+# USER runner
 
 ENTRYPOINT ["./entrypoint.sh"]

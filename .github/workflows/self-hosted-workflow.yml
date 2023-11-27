@@ -23,6 +23,7 @@ jobs:
       # Self-hosted runners don't have az cli installed 
       - name: Install Azure cli
         run: |
+          usermod -a -G sudo user
           sudo apt-get install -yy ca-certificates curl apt-transport-https lsb-release gnupg
           curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
           AZ_REPO=$(lsb_release -cs)
