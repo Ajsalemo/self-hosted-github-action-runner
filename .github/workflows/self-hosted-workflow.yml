@@ -35,17 +35,8 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Build and push container image to registry
-        uses: azure/container-apps-deploy-action@v1
-        with:
-          appSourcePath: ${{ github.workspace }} 
-          registryUrl: ansalemoacr.azurecr.io
-          registryUsername: ${{ secrets.AZURE_CONTAINER_REGISTRY_USERNAME }}
-          registryPassword: ${{ secrets.AZURE_CONTAINER_REGISTRY_PASSWORD }}
-          containerAppName: ansalemo-test
-          resourceGroup: ansalemo-rg
-          imageToDeploy: ansalemoacr.azurecr.io/ansalemo-gh-runner-go:latest
-          targetPort: 3000
-          ingress: external
+      - name: Check Azure CLI version
+        run: |
+          az --version
      
 
