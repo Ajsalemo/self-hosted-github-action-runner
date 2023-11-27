@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/sh
 
 # Retrieve a short lived runner registration token using the PAT
 REGISTRATION_TOKEN="$(curl -X POST -fsSL \
