@@ -42,9 +42,11 @@ jobs:
           registryUrl: ansalemoacr.azurecr.io
           registryUsername: ${{ secrets.AZURE_CONTAINER_REGISTRY_USERNAME }}
           registryPassword: ${{ secrets.AZURE_CONTAINER_REGISTRY_PASSWORD }}
-          containerAppName: ansalemo-aca-placeholder
+          containerAppName: ansalemo-test
           resourceGroup: ansalemo-rg
           imageToBuild: ansalemoacr.azurecr.io/ansalemo-gh-runner-go:${{ github.sha }}
+          targetPort: 3000
+          ingress: external
           dockerfilePath: Dockerfile
 
      
