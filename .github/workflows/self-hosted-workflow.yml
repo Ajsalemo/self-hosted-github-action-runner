@@ -47,7 +47,5 @@ jobs:
           imageToDeploy: ansalemoacr.azurecr.io/ansalemo-gh-runner-go:latest
           targetPort: 3000
           ingress: external
-          dockerfilePath: Dockerfile
-
      
 
