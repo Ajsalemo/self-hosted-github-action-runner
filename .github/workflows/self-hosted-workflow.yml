@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Checkout to the branch
         uses: actions/checkout@v2
-      # Self-hosted runners don't have az cli installed 
+      # Self-hosted runners do not have az cli installed 
       - name: Install Azure cli
         run: |
           usermod -a -G sudo root
