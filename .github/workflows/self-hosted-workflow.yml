@@ -38,5 +38,9 @@ jobs:
       - name: Check Azure CLI version
         run: |
           az --version
+
+      - name: Check OS version
+        run: |
+          cat /etc/os-release
      
 
