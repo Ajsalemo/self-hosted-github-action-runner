@@ -17,10 +17,10 @@ az containerapp job create -n "$JOB_NAME" -g "$RESOURCE_GROUP" --environment "$E
     --scale-rule-auth "personalAccessToken=personal-access-token" \
     --cpu "2.0" \
     --memory "4Gi" \
-    --secrets "personal-access-token=$GITHUB_PAT" \
+    --secrets "personal-access-token=$GITHUB_PAT acrpassword=$CONTAINER_REGISTRY_PASSWORD" \
     --env-vars "GITHUB_PAT=secretref:personal-access-token" "REPO_URL=https://github.com/$REPO_OWNER/$REPO_NAME" "REGISTRATION_TOKEN_API_URL=https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/actions/runners/registration-token" \
     --registry-server "$CONTAINER_REGISTRY_NAME.azurecr.io" \
-    --registry-password "$CONTAINER_REGISTRY_PASSWORD"
+    --registry-password "secretref:acrpassword"
 
 # Get the current job status
 az containerapp job execution list \
