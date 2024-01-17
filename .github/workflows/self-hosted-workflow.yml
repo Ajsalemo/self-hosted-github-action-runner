@@ -2,6 +2,10 @@ name: Trigger auto deployment for ansalemo-cicd-test
 
 # When this action will be executed
 on:
+  label:  
+    types:
+      - created
+      - edited
   # Automatically trigger it when detected changes in repo
   push:
     branches: 
@@ -14,7 +18,7 @@ on:
       
 jobs:
   build-and-deploy:
-    runs-on: self-hosted
+    runs-on: self-hosted, edited, created
 
     steps:
       - name: Checkout to the branch

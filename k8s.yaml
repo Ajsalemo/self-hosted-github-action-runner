@@ -52,4 +52,4 @@ spec:
       reposFromEnv: "REPO_NAME"
       targetWorkflowQueueLength: "1"
     authenticationRef:
-      name: personalAccessToken
+      name: github-trigger-auth
