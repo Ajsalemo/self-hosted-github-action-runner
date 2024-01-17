@@ -18,7 +18,7 @@ on:
       
 jobs:
   build-and-deploy:
-    runs-on: self-hosted, edited, created
+    runs-on: [self-hosted, edited, created]
 
     steps:
       - name: Checkout to the branch
