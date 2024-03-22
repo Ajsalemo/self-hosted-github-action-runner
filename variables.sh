@@ -1,7 +1,7 @@
 GITHUB_PAT="github_pat_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 REPO_OWNER="ownername"
 REPO_NAME="self-hosted-github-action-runner"
-CONTAINER_IMAGE_NAME="someimage:1.0"
+CONTAINER_IMAGE_NAME="self-hosted-github-action-runner:latest"
 CONTAINER_REGISTRY_NAME="someacr"
 CONTAINER_REGISTRY_PASSWORD="somepassword"
 JOB_NAME="some-aca-gh-runner-job"
