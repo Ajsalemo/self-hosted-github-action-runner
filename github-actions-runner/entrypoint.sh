@@ -10,4 +10,4 @@ REGISTRATION_TOKEN="$(curl -X POST -fsSL \
 
 export RUNNER_ALLOW_RUNASROOT=1
 
-./config.sh --url $REPO_URL --token $REGISTRATION_TOKEN --unattended --ephemeral && ./run.sh
+./config.sh --url $REPO_URL --token $REGISTRATION_TOKEN --unattended --ephemeral --no-default-labels && ./run.sh
