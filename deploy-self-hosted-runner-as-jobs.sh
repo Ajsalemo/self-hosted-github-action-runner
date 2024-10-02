@@ -20,7 +20,8 @@ az containerapp job create -n "$JOB_NAME" -g "$RESOURCE_GROUP" --environment "$E
     --secrets "personal-access-token=$GITHUB_PAT" \
     --env-vars "GITHUB_PAT=secretref:personal-access-token" "REPO_URL=https://github.com/$REPO_OWNER/$REPO_NAME" "REGISTRATION_TOKEN_API_URL=https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/actions/runners/registration-token" \
     --registry-server "$CONTAINER_REGISTRY_NAME.azurecr.io" \
-    --registry-password "$CONTAINER_REGISTRY_PASSWORD"
+    --registry-password "$CONTAINER_REGISTRY_PASSWORD" \
+    --workload-profile-name "$WORKLOAD_PROFILE_NAME"
 
 # Get the current job status
 az containerapp job execution list \
