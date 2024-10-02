@@ -1,4 +1,4 @@
-name: Trigger auto deployment for ansalemo-cicd-test
+name: Trigger auto deployment for self-hosted-github-action-runner
 
 # When this action will be executed
 on:
