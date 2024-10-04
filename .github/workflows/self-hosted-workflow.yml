@@ -14,7 +14,7 @@ on:
       
 jobs:
   build-and-deploy:
-    runs-on: keda-dev
+    runs-on: local-dev
 
     steps:
       - name: Checkout to the branch
