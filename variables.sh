@@ -1,5 +1,5 @@
 GITHUB_PAT="github_pat_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-REPO_OWNER="ownername"
+REPO_OWNER="Ajsalemo"
 REPO_NAME="self-hosted-github-action-runner"
 CONTAINER_IMAGE_NAME="self-hosted-github-action-runner:latest"
 CONTAINER_REGISTRY_NAME="someacr"
