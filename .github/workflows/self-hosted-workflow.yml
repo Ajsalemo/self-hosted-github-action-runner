@@ -14,7 +14,7 @@ on:
       
 jobs:
   build-and-deploy:
-    runs-on: local-dev
+    runs-on: self-hosted
 
     steps:
       - name: Checkout to the branch
