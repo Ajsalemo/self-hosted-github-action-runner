@@ -1,6 +1,5 @@
 name: Trigger auto deployment for self-hosted-github-action-runner
 
-# When this action will be executed
 on:
   # Automatically trigger it when detected changes in repo
   push:
