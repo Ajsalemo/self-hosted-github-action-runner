@@ -23,5 +23,9 @@ jobs:
         run: |
           echo "Checking OS version.."
           cat /etc/os-release
-     
+          
+      - name: Check current environment variables
+        run: |
+          echo "Checking environment variables.."
+          env
 
